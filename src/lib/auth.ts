@@ -16,18 +16,18 @@ const authOption:NextAuthOptions={
         password:{label:'Password',type:'password'}
       },
       async authorize(credentials,req){
-        let email=credentials?.email
-        let password=credentials?.password
+        const email=credentials?.email
+        const password=credentials?.password
         if (!email || !password) {
           throw new Error("email or password is not found.")
         }
         await connectDb()
-        let user = await User.findOne({email})
+        const user = await User.findOne({email})
         if (!user) {
           throw new Error("user not found.")
         }
         
-        let isMatch=await bcrypt.compare(password,user.password)
+        const isMatch=await bcrypt.compare(password,user.password)
         if (!isMatch) {
           throw new Error("incorrect password")
         }

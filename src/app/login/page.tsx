@@ -1,5 +1,4 @@
 'use client'
-import axios from "axios";
 import { signIn, useSession } from "next-auth/react";
 import { useRouter } from "next/navigation";
 import React, { useState, FormEvent } from "react";

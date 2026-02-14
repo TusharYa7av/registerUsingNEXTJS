@@ -6,7 +6,7 @@ import { CgProfile } from "react-icons/cg";
 import axios from 'axios';
 import { userDataContext } from '@/context/UserContext';
 
-const page = () => {
+const Page = () => {
   const data = useContext(userDataContext)
   const[name,setName] = useState("")
   const[frontendImage,setFrontendImage]=useState("")
@@ -74,4 +74,4 @@ const page = () => {
   )
 }
 
-export default page
+export default Page

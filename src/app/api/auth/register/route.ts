@@ -7,7 +7,7 @@ export async function POST(request:NextRequest){
   try {
     const {name , email , password} = await request.json()
     await connectDb()
-    let existUser=await User.findOne({email})
+    const existUser=await User.findOne({email})
     if(existUser){
       return NextResponse.json(
       {message:"user already exist!"},
