@@ -56,7 +56,7 @@ const Register = () => {
           </p>
 
           <button className="w-full py-2 px-4 bg-white text-black font-semibold rounded-lg hover:bg-gray-200 transition-colors cursor-pointer mb-5">
-            Register
+            Login
           </button>
         </form>
 
