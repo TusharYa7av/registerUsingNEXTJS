@@ -15,7 +15,7 @@ const authOption:NextAuthOptions={
         email:{label:'Email',type:'text'},
         password:{label:'Password',type:'password'}
       },
-      async authorize(credentials,req){
+      async authorize(credentials){
         const email=credentials?.email
         const password=credentials?.password
         if (!email || !password) {
@@ -52,7 +52,7 @@ const authOption:NextAuthOptions={
         await connectDb()
         let existUser = await User.findOne({email:user?.email})
         if(!existUser){
-          let existUser = await User.create({
+          existUser = await User.create({
             name:user.name,
             email:user?.email
           })

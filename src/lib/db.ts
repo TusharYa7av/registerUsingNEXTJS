@@ -24,7 +24,6 @@ const connectDb = async ()=> {
 
   try {
     cached.conn = await cached.promise 
-    log("db connected")
   } catch (error) {
     throw error
   }
